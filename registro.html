@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Entrevista</title>
+</head>
+<body>
+    <form action="" class="formulario">
+        <input type="text" name="" id="" placeholder="Nombre" required>
+        <input type="text" name="" id="" placeholder="Direccion" required>
+        <div class="contenedor-genero-texto"> 
+            <div class="genero-texto">
+                Genero
+            </div>
+            <div class="sexo">
+                <label for="masculino"><input type="radio" name="genero" value="masculino" id="masculino" >    Masculino</label>
+                <label for="femenino"><input type="radio" name="genero" value="femenino" id="femenino">    Femenino</label>
+                <label for="otro"><input type="radio" name="genero" value="otro" id="otro">    Otro</label>
+            </div>
+        </div>
+        <div class="contenedor-fecha-nacimiento">
+            <div class="fecha-texto">
+                Fecha de nacimiento
+            </div>
+            <input type="date" id="start" name="trip-start" value="2022-05-06" min="1900-05-06" max="2022-05-06" required>
+            
+        </div>
+        <input type="password" name="" id="" placeholder="Contraseña" required>
+        
+        <input type="submit" value="Enviar">
+    </form>
+    <script src="./js/app.js"></script>
+</body>
+</html>
+

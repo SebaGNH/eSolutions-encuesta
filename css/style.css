@@ -11,30 +11,71 @@ body {
   background-repeat: no-repeat;
 }
 
-.formulario {
+.botones {
+  margin: 0px auto;
+  background: none;
+  border: 1px solid #51D322;
+  color: #51D322;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+}
+.botones:hover {
+  background: #51D322;
+  color: #fff;
+  transition: all 0.3s linear;
+}
+
+.contenedor {
   background: #fff;
   max-width: 500px;
   width: 90%;
   margin: 15vh auto;
   padding: 20px;
   border-radius: 5px;
+}
+.contenedor .contenedor-login {
   display: flex;
   flex-direction: column;
 }
-.formulario input {
+.contenedor .contenedor-login .contenedor-imagen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.contenedor .contenedor-login .contenedor-imagen .img-logo {
+  max-width: 90%;
+}
+.contenedor .contenedor-login .contenedor-botones {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.contenedor .contenedor-login .contenedor-botones input[type=button] {
+  width: 45%;
+  border: 1px solid #51D322;
+}
+.contenedor .formulario {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.contenedor input {
   border: 1px solid #2F3AB1;
 }
-.formulario input[type=text], .formulario input[type=password] {
+.contenedor input[type=text], .contenedor input[type=password] {
   width: 100%;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 3px;
   font-size: 16px;
 }
-.formulario input[type=text]:hover, .formulario input[type=password]:hover {
+.contenedor input[type=text]:hover, .contenedor input[type=password]:hover {
   border: 1px solid #51D322;
 }
-.formulario .contenedor-genero-texto {
+.contenedor .contenedor-genero-texto {
   width: 100%;
   padding: 20px;
   border: 1px solid #2F3AB1;
@@ -45,21 +86,21 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
-.formulario .contenedor-genero-texto .genero-texto {
+.contenedor .contenedor-genero-texto .genero-texto {
   color: #000;
   text-align: center;
   font-size: 20px;
 }
-.formulario .contenedor-genero-texto .sexo {
+.contenedor .contenedor-genero-texto .sexo {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   margin-top: 15px;
 }
-.formulario .contenedor-genero-texto:hover {
+.contenedor .contenedor-genero-texto:hover {
   border: 1px solid #51D322;
 }
-.formulario .contenedor-fecha-nacimiento {
+.contenedor .contenedor-fecha-nacimiento {
   width: 100%;
   padding: 20px;
   margin-bottom: 20px;
@@ -70,12 +111,12 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
-.formulario .contenedor-fecha-nacimiento .fecha-texto {
+.contenedor .contenedor-fecha-nacimiento .fecha-texto {
   color: #000;
   text-align: center;
   font-size: 20px;
 }
-.formulario .contenedor-fecha-nacimiento input[type=date] {
+.contenedor .contenedor-fecha-nacimiento input[type=date] {
   width: 100%;
   padding: 20px;
   border-radius: 3px;
@@ -83,10 +124,10 @@ body {
   text-align: center;
   border: none;
 }
-.formulario .contenedor-fecha-nacimiento:hover {
+.contenedor .contenedor-fecha-nacimiento:hover {
   border: 1px solid #51D322;
 }
-.formulario input[type=submit] {
+.contenedor input[type=submit] {
   width: 100%;
   margin: 0px auto;
   background: none;
@@ -97,7 +138,7 @@ body {
   font-size: 16px;
   border-radius: 4px;
 }
-.formulario input[type=submit]:hover {
+.contenedor input[type=submit]:hover {
   background: #51D322;
   color: #fff;
 }

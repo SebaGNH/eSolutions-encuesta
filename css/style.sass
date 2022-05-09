@@ -10,15 +10,59 @@ body
     background-size: cover
     background-repeat: no-repeat
 
-.formulario
+
+.botones
+    margin: 0px auto
+    background: none 
+    border: 1px solid #51D322
+    color: #51D322
+    padding: 10px
+    cursor: pointer
+    font-size: 16px
+    border-radius: 4px  
+    &:hover
+        background: #51D322
+        color: #fff
+        transition: all .3s linear
+
+
+
+.contenedor
     background: #fff
     max-width: 500px
     width: 90%
     margin: 15vh auto
     padding: 20px
     border-radius: 5px
-    display: flex
-    flex-direction: column
+    .contenedor-login
+        display: flex
+        flex-direction: column
+        .contenedor-imagen
+            display: flex
+            justify-content: center
+            align-items: center
+            margin-bottom: 30px
+            .img-logo
+                max-width: 90%
+        .contenedor-botones
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            input[type="button"]
+                width: 45%
+                border: 1px solid #51D322
+
+
+
+    
+
+
+
+    .formulario
+        //margin: 15vh auto
+        background: #fff
+        display: flex
+        flex-direction: column
     input 
         border: 1px solid #2F3AB1
     input[type="text"] ,input[type="password"]

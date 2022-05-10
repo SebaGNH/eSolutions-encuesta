@@ -6,9 +6,9 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: url("../img/fondo.jpg") #292929;
+  background: url("../img/fondo.jpg") #0f68d3;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
 }
 
 .botones {
@@ -25,6 +25,18 @@ body {
   background: #51D322;
   color: #fff;
   transition: all 0.3s linear;
+}
+
+.inputText {
+  border: 1px solid #2F3AB1;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  font-size: 16px;
+}
+.inputText:hover {
+  border: 1px solid #51D322;
 }
 
 .contenedor {
@@ -57,25 +69,36 @@ body {
   width: 45%;
   border: 1px solid #51D322;
 }
-.contenedor .formulario {
+.contenedor .contenedor-login .contenedor-ingresar {
+  display: none;
+}
+.contenedor .contenedor-login .contenedor-ingresar .id-btn-login {
+  width: 100%;
+}
+
+.contenedor-formulario {
+  display: none;
+}
+.contenedor-formulario .formulario {
+  display: none;
   background: #fff;
   display: flex;
   flex-direction: column;
 }
-.contenedor input {
+.contenedor-formulario input {
   border: 1px solid #2F3AB1;
 }
-.contenedor input[type=text], .contenedor input[type=password] {
+.contenedor-formulario input[type=text], .contenedor-formulario input[type=password] {
   width: 100%;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 3px;
   font-size: 16px;
 }
-.contenedor input[type=text]:hover, .contenedor input[type=password]:hover {
+.contenedor-formulario input[type=text]:hover, .contenedor-formulario input[type=password]:hover {
   border: 1px solid #51D322;
 }
-.contenedor .contenedor-genero-texto {
+.contenedor-formulario .contenedor-genero-texto {
   width: 100%;
   padding: 20px;
   border: 1px solid #2F3AB1;
@@ -86,21 +109,21 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
-.contenedor .contenedor-genero-texto .genero-texto {
+.contenedor-formulario .contenedor-genero-texto .genero-texto {
   color: #000;
   text-align: center;
   font-size: 20px;
 }
-.contenedor .contenedor-genero-texto .sexo {
+.contenedor-formulario .contenedor-genero-texto .sexo {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   margin-top: 15px;
 }
-.contenedor .contenedor-genero-texto:hover {
+.contenedor-formulario .contenedor-genero-texto:hover {
   border: 1px solid #51D322;
 }
-.contenedor .contenedor-fecha-nacimiento {
+.contenedor-formulario .contenedor-fecha-nacimiento {
   width: 100%;
   padding: 20px;
   margin-bottom: 20px;
@@ -111,12 +134,12 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
-.contenedor .contenedor-fecha-nacimiento .fecha-texto {
+.contenedor-formulario .contenedor-fecha-nacimiento .fecha-texto {
   color: #000;
   text-align: center;
   font-size: 20px;
 }
-.contenedor .contenedor-fecha-nacimiento input[type=date] {
+.contenedor-formulario .contenedor-fecha-nacimiento input[type=date] {
   width: 100%;
   padding: 20px;
   border-radius: 3px;
@@ -124,10 +147,10 @@ body {
   text-align: center;
   border: none;
 }
-.contenedor .contenedor-fecha-nacimiento:hover {
+.contenedor-formulario .contenedor-fecha-nacimiento:hover {
   border: 1px solid #51D322;
 }
-.contenedor input[type=submit] {
+.contenedor-formulario input[type=submit] {
   width: 100%;
   margin: 0px auto;
   background: none;
@@ -138,9 +161,36 @@ body {
   font-size: 16px;
   border-radius: 4px;
 }
-.contenedor input[type=submit]:hover {
+.contenedor-formulario input[type=submit]:hover {
   background: #51D322;
   color: #fff;
 }
+
+/*     input[type="submit"]
+ *      width: 100%
+ *      margin: 0px auto
+ *      background: none 
+ *      border: 1px solid #51D322
+ *      color: #51D322
+ *      padding: 10px
+ *      cursor: pointer
+ *      font-size: 16px
+ *      border-radius: 4px
+ *      &:hover
+ *          background: #51D322
+ *          color: #fff */
+/* .botones
+ *  margin: 0px auto
+ *  background: none 
+ *  border: 1px solid #51D322
+ *  color: #51D322
+ *  padding: 10px
+ *  cursor: pointer
+ *  font-size: 16px
+ *  border-radius: 4px  
+ *  &:hover
+ *      background: #51D322
+ *      color: #fff
+ *      transition: all .3s linear */
 
 /*# sourceMappingURL=style.css.map */

@@ -47,23 +47,32 @@ body {
   padding: 20px;
   border-radius: 5px;
 }
-.contenedor .contenedor-login {
-  display: flex;
-  flex-direction: column;
-}
-.contenedor .contenedor-login .contenedor-imagen {
+.contenedor .contenedor-imagen {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
 }
-.contenedor .contenedor-login .contenedor-imagen .img-logo {
+.contenedor .contenedor-imagen .img-logo {
   max-width: 90%;
 }
-.contenedor .contenedor-login .contenedor-botones {
+.contenedor .contenedor-boton-volver {
+  display: none;
+}
+.contenedor .contenedor-boton-volver .botonVolver {
+  width: 100%;
+  border: 1px solid #000;
+  background: #000;
+  color: #fff;
+  margin: 15px 0;
+}
+.contenedor .contenedor-login {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+}
+.contenedor .contenedor-login .contenedor-botones {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 .contenedor .contenedor-login .contenedor-botones input[type=button] {
   width: 45%;

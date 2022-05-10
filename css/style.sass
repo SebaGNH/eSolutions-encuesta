@@ -46,21 +46,28 @@ body
     border-radius: 5px
     //opacity: 0.4
 
+    .contenedor-imagen
+        display: flex
+        justify-content: center
+        align-items: center
+        margin-bottom: 30px
+        .img-logo
+            max-width: 90%
     //Contenedor Login
+    .contenedor-boton-volver
+        display: none
+        .botonVolver
+            width: 100%
+            border: 1px solid #000
+            background: #000 
+            color: #fff
+            margin: 15px 0
     .contenedor-login
         display: flex
-        flex-direction: column
-        .contenedor-imagen
-            display: flex
-            justify-content: center
-            align-items: center
-            margin-bottom: 30px
-            .img-logo
-                max-width: 90%
         .contenedor-botones
+            width: 100%
             display: flex
-            flex-direction: row
-            justify-content: space-between
+            justify-content: space-around
             input[type="button"]
                 width: 45%
                 border: 1px solid #51D322

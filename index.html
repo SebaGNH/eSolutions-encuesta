@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="shortcut icon" href="https://img.icons8.com/material-outlined/24/000000/edit--v2.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/iconeSollutions.ico" type="image/x-icon">
     <title>Entrevista</title>
 </head>
 <body>
@@ -25,7 +25,7 @@
         <div id="contenedor-ingresar" class="contenedor-ingresar">
             <input class="inputText" type="text" name="" id="" placeholder="Nombre" required>
             <input class="inputText" type="password" name="" id="" placeholder="Contraseña" required>
-            <input id="id-btn-login" class="botones id-btn-login" type="button" value="Login">
+            <input id="btn-identificar" class="botones btn-identificar" type="button" value="Identificar">
         </div>
     </div>
 
@@ -33,9 +33,9 @@
 
     <div id="contenedor-formulario"class="contenedor-formulario">
     <form action="" class="formulario">
-        <input  class="inputText" type="text" name="" id="" placeholder="Nombre" required>
-        <input  class="inputText" type="text" name="" id="" placeholder="Direccion" required>
-        <div class="contenedor-genero-texto"> 
+        <input  class="inputText" type="text" name="" id="nombre-suario" placeholder="Nombre" required>
+        <input  class="inputText" type="text" name="" id="direccion" placeholder="Direccion" required>
+        <div class="contenedor-genero"> 
             <div class="genero-texto">
                 Genero
             </div>
@@ -52,9 +52,12 @@
             <input type="date" id="start" name="trip-start" value="2022-05-06" min="1900-05-06" max="2022-05-06" required>
             
         </div>
-        <input  class="inputText" type="password" name="" id="" placeholder="Contraseña" required>
+        <!--  <input  class="inputText" type="text" name="" id="" placeholder="Altura" required>
+        <input  class="inputText" type="text" name="" id="" placeholder="Peso" required> -->
+        <input  class="inputText" type="password" name="" id="password" placeholder="Contraseña" required>
         
-        <input  class="botones" type="submit" value="Registrar">
+        
+        <input  id="id-btn-registrar-submit" class="botones" type="submit" value="Registrar">
     </form>
     </div>
 </div>

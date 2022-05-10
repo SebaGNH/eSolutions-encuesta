@@ -1,17 +1,24 @@
 'use strict'
 
-let contenedor = document.getElementById("contenedor");
+const contenedor = document.getElementById("contenedor");
 
 
-let contenedor_login = document.getElementById("contenedor-login");
+const contenedor_login = document.getElementById("contenedor-login");
 
-let id_btn_registrar = document.getElementById("id-btn-registrar");
-let id_btn_ingresar = document.getElementById("id-btn-ingresar");
-let contenedor_botones = document.getElementById("contenedor-botones");
-let contenedor_ingresar = document.getElementById("contenedor-ingresar");
+const id_btn_registrar = document.getElementById("id-btn-registrar");
+const id_btn_ingresar = document.getElementById("id-btn-ingresar");
+const contenedor_botones = document.getElementById("contenedor-botones");
+const contenedor_ingresar = document.getElementById("contenedor-ingresar");
+const contenedor_formulario = document.getElementById("contenedor-formulario");
+const id_btn_registrar_submit = document.getElementById("id-btn-registrar-submit");
+const btn_identificar = document.getElementById("btn-identificar");
 
-
-let contenedor_formulario = document.getElementById("contenedor-formulario");
+let nombre_suario;
+let direccion;
+let genero;
+let fecha_nacimiento;
+let password;
+let usuarios = new Array();
 
 id_btn_registrar.addEventListener("click", ()=>{
     contenedor_login.style.display = "none";
@@ -21,8 +28,26 @@ id_btn_registrar.addEventListener("click", ()=>{
 id_btn_ingresar.addEventListener("click", ()=>{
     contenedor_botones.style.display = "none";
     contenedor_ingresar.style.display ="block";
-   // console.log("boton ingresar");
 });
 
 
-//contenedor_botones.style.display = "none";
+id_btn_registrar_submit.addEventListener("click", ()=>{
+    registrar();
+});
+
+function registrar(){
+    //console.log("registrad");
+    nombre_suario = document.getElementById("nombre-suario").value;
+    direccion = document.getElementById("direccion").value;
+    genero;
+    fecha_nacimiento;
+    password = document.getElementById("password").value;
+    console.log(nombre_suario +" "+ direccion +" "+ password);
+
+    usuarios.push(nombre_suario);
+}
+
+btn_identificar.addEventListener("click", ()=>{
+    console.log("botn login");
+})
+

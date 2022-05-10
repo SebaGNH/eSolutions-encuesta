@@ -85,19 +85,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-.contenedor-formulario input {
-  border: 1px solid #2F3AB1;
-}
-.contenedor-formulario input[type=text], .contenedor-formulario input[type=password] {
-  width: 100%;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 3px;
-  font-size: 16px;
-}
-.contenedor-formulario input[type=text]:hover, .contenedor-formulario input[type=password]:hover {
-  border: 1px solid #51D322;
-}
 .contenedor-formulario .contenedor-genero-texto {
   width: 100%;
   padding: 20px;
@@ -165,32 +152,5 @@ body {
   background: #51D322;
   color: #fff;
 }
-
-/*     input[type="submit"]
- *      width: 100%
- *      margin: 0px auto
- *      background: none 
- *      border: 1px solid #51D322
- *      color: #51D322
- *      padding: 10px
- *      cursor: pointer
- *      font-size: 16px
- *      border-radius: 4px
- *      &:hover
- *          background: #51D322
- *          color: #fff */
-/* .botones
- *  margin: 0px auto
- *  background: none 
- *  border: 1px solid #51D322
- *  color: #51D322
- *  padding: 10px
- *  cursor: pointer
- *  font-size: 16px
- *  border-radius: 4px  
- *  &:hover
- *      background: #51D322
- *      color: #fff
- *      transition: all .3s linear */
 
 /*# sourceMappingURL=style.css.map */

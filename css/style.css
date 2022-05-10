@@ -52,10 +52,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
+  margin: 30px;
 }
 .contenedor .contenedor-imagen .img-logo {
   max-width: 90%;
+  animation: giralogo 30s ease-in-out infinite 2s;
+}
+@keyframes giralogo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 .contenedor .contenedor-boton-volver {
   display: none;

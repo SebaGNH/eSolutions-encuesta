@@ -14,7 +14,7 @@ body {
 
 .botones {
   margin: 0px auto;
-  background: none;
+  background-color: rgba(255, 255, 255, 0.7);
   border: 1px solid #0454d4;
   color: #0454d4;
   padding: 10px;
@@ -29,7 +29,7 @@ body {
 }
 
 .inputText {
-  border: 1px solid #2F3AB1;
+  border: 1px solid #fff;
   width: 100%;
   padding: 20px;
   margin-bottom: 20px;
@@ -41,7 +41,7 @@ body {
 }
 
 .contenedor {
-  background: #fff;
+  background-color: rgba(255, 255, 255, 0.6);
   max-width: 500px;
   width: 90%;
   margin: 12vh auto;
@@ -72,9 +72,13 @@ body {
 .contenedor .contenedor-boton-volver .botonVolver {
   width: 100%;
   border: 1px solid #000;
+  color: #000;
+  margin: 15px 0;
+}
+.contenedor .contenedor-boton-volver .botonVolver:hover {
+  border: 1px solid #000;
   background: #000;
   color: #fff;
-  margin: 15px 0;
 }
 .contenedor .contenedor-login-principal {
   display: flex;
@@ -99,7 +103,7 @@ body {
 }
 .contenedor .contenedor-formulario .formulario {
   display: none;
-  background: #fff;
+  background: none;
   display: flex;
   flex-direction: column;
 }

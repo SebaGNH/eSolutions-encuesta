@@ -67,22 +67,22 @@ body {
   color: #fff;
   margin: 15px 0;
 }
-.contenedor .contenedor-login {
+.contenedor .contenedor-login-principal {
   display: flex;
 }
-.contenedor .contenedor-login .contenedor-botones {
+.contenedor .contenedor-login-principal .contenedor-botones {
   width: 100%;
   display: flex;
   justify-content: space-around;
 }
-.contenedor .contenedor-login .contenedor-botones input[type=button] {
+.contenedor .contenedor-login-principal .contenedor-botones input[type=button] {
   width: 45%;
   border: 1px solid #0454d4;
 }
-.contenedor .contenedor-login .contenedor-ingresar {
+.contenedor .contenedor-login-principal .contenedor-ingresar {
   display: none;
 }
-.contenedor .contenedor-login .contenedor-ingresar .btn-identificar {
+.contenedor .contenedor-login-principal .contenedor-ingresar .btn-identificar {
   width: 100%;
 }
 .contenedor .contenedor-formulario {
@@ -94,7 +94,13 @@ body {
   display: flex;
   flex-direction: column;
 }
-.contenedor .contenedor-formulario .contenedor-genero {
+.contenedor .contenedor-formulario .formulario .contenedor-dos-preguntas-propias .btn-seguir-a-datos-personales {
+  width: 100%;
+}
+.contenedor .contenedor-formulario .formulario .contenedor-datos-personales {
+  display: none;
+}
+.contenedor .contenedor-formulario .formulario .contenedor-datos-personales .contenedor-genero {
   width: 100%;
   padding: 20px;
   border: 1px solid #2F3AB1;
@@ -105,21 +111,21 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
-.contenedor .contenedor-formulario .contenedor-genero .genero-texto {
+.contenedor .contenedor-formulario .formulario .contenedor-datos-personales .contenedor-genero .genero-texto {
   color: #000;
   text-align: center;
   font-size: 20px;
 }
-.contenedor .contenedor-formulario .contenedor-genero .sexo {
+.contenedor .contenedor-formulario .formulario .contenedor-datos-personales .contenedor-genero .sexo {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   margin-top: 15px;
 }
-.contenedor .contenedor-formulario .contenedor-genero:hover {
+.contenedor .contenedor-formulario .formulario .contenedor-datos-personales .contenedor-genero:hover {
   border: 1px solid #0454d4;
 }
-.contenedor .contenedor-formulario .contenedor-fecha-nacimiento {
+.contenedor .contenedor-formulario .formulario .contenedor-datos-personales .contenedor-fecha-nacimiento {
   width: 100%;
   padding: 20px;
   margin-bottom: 20px;
@@ -130,15 +136,15 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
-.contenedor .contenedor-formulario .contenedor-fecha-nacimiento:hover {
+.contenedor .contenedor-formulario .formulario .contenedor-datos-personales .contenedor-fecha-nacimiento:hover {
   border: 1px solid #0454d4;
 }
-.contenedor .contenedor-formulario .contenedor-fecha-nacimiento .fecha-texto {
+.contenedor .contenedor-formulario .formulario .contenedor-datos-personales .contenedor-fecha-nacimiento .fecha-texto {
   color: #000;
   text-align: center;
   font-size: 20px;
 }
-.contenedor .contenedor-formulario .contenedor-fecha-nacimiento input[type=date] {
+.contenedor .contenedor-formulario .formulario .contenedor-datos-personales .contenedor-fecha-nacimiento input[type=date] {
   width: 100%;
   padding: 20px;
   border-radius: 3px;
@@ -146,7 +152,16 @@ body {
   text-align: center;
   border: none;
 }
-.contenedor .contenedor-formulario input[type=submit] {
+.contenedor .contenedor-formulario .formulario .contenedor-datos-personales .btn-seguir-a-cuantro-preguntas {
+  width: 100%;
+}
+.contenedor .contenedor-formulario .formulario .contenedor-cuatro-preguntas {
+  display: none;
+}
+.contenedor .contenedor-formulario .contenedor-submit {
+  display: none;
+}
+.contenedor .contenedor-formulario .contenedor-submit input[type=submit] {
   width: 100%;
 }
 

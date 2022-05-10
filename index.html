@@ -12,59 +12,79 @@
     
 
 
-<div id="contenedor"class="contenedor">
+<main id="contenedor"class="contenedor">
     <!-- Login -->
     <!-- Contenedor Imagen -->    
     <div id="contenedor-imagen" class="contenedor-imagen">
         <img class="img-logo"src="./img/logo.png" alt="logo eSolutions">
     </div>
-    <!-- Boton ingresar -->
+    <!-- Botón volver -->
     <div id="contenedor-boton-volver" class="contenedor-boton-volver">
         <input id="btn-volver" class="botones botonVolver" type="button" value="Volver Atrás">
     </div>
-    <div id="contenedor-login"class="contenedor-login">
+
+    
+    <!-- Pantalla de inicio -->
+    <div id="contenedor-login-principal"class="contenedor-login-principal">
         <div id="contenedor-botones"class="contenedor-botones">
-            <input id="id-btn-registrar" class="botones" type="button" value="Registrar">
+            <input id="id-btn-registrar" class="botones" type="button" value="Registro">
             <input id="id-btn-ingresar" class="botones" type="button" value="Ingresar">
         </div>
+        <!-- Boton ingresar -->
         <div id="contenedor-ingresar" class="contenedor-ingresar">
-            <input class="inputText" type="text" name="" id="identificador-nombre" placeholder="Nombre" required>
-            <input class="inputText" type="password" name="" id="identificador-password" placeholder="Contraseña" required>
+            <input class="inputText" type="text" name="" id="input-nombre" placeholder="Nombre" autocomplete="off" required>
+            <input class="inputText" type="password" name="" id="input-password" placeholder="Contraseña" autocomplete="off" required>
             <input id="btn-identificar" class="botones btn-identificar" type="button" value="Identificar">
         </div>
     </div>
-    <!-- Formulario -->
 
+
+    <!-- Formulario -->
     <div id="contenedor-formulario"class="contenedor-formulario">
     <form action="" class="formulario">
-        <input  class="inputText" type="text" name="" id="nombre-suario" placeholder="Nombre" required>
-        <input  class="inputText" type="text" name="" id="direccion" placeholder="Direccion" required>
-        <div class="contenedor-genero"> 
-            <div class="genero-texto">
-                Genero
-            </div>
-            <div class="sexo">
-                <label for="masculino"><input type="radio" name="genero" value="masculino" id="masculino" >    Masculino</label>
-                <label for="femenino"><input type="radio" name="genero" value="femenino" id="femenino">    Femenino</label>
-                <label for="otro"><input type="radio" name="genero" value="otro" id="otro">    Otro</label>
-            </div>
+        <!-- Dos preguntas propias -->
+        <div id="contenedor-dos-preguntas-propias" class="contenedor-dos-preguntas-propias">
+            <input  class="inputText" type="text" name="" id="input_form_pregunta_1" placeholder="¿Cual es su nombre?" autocomplete="off" required>
+            <input  class="inputText" type="text" name="" id="input_form_pregunta_2" placeholder="¿Cual es su apellido?" autocomplete="off" required>
+            <input id="btn-seguir-a-datos-personales" class="botones btn-seguir-a-datos-personales" type="button" value="Seguir ...">
         </div>
-        <div class="contenedor-fecha-nacimiento">
-            <div class="fecha-texto">
-                Fecha de nacimiento
+        <!-- Datos personales -->
+        <div id="contenedor-datos-personales" class="contenedor-datos-personales">
+            <input  class="inputText" type="text" name="" id="input_form_nombre" placeholder="Nombre" autocomplete="off" required>
+            <input  class="inputText" type="text" name="" id="input_form_direccion" placeholder="Direccion" autocomplete="off" required>
+            <div class="contenedor-genero"> 
+                <div class="genero-texto">
+                    Genero
+                </div>
+                <div class="sexo">
+                    <label for="masculino"><input type="radio" name="genero" value="masculino" id="masculino" >    Masculino</label>
+                    <label for="femenino"><input type="radio" name="genero" value="femenino" id="femenino">    Femenino</label>
+                    <label for="otro"><input type="radio" name="genero" value="otro" id="otro">    Otro</label>
+                </div>
             </div>
-            <input type="date" id="start" name="trip-start" value="2022-05-06" min="1900-05-06" max="2022-05-06" required>
-            
+            <div class="contenedor-fecha-nacimiento">
+                <div class="fecha-texto">
+                    Fecha de nacimiento
+                </div>
+                <input type="date" id="start" name="trip-start" value="2022-05-06" min="1900-05-06" max="2022-05-06" required>            
+            </div>
+            <input  class="inputText" type="password" name="" id="input_form_password" placeholder="Contraseña" autocomplete="off" required>
+            <input id="btn-seguir-a-cuantro-preguntas" class="botones btn-seguir-a-cuantro-preguntas" type="button" value="Seguir...">
         </div>
-        <!--  <input  class="inputText" type="text" name="" id="" placeholder="Altura" required>
-        <input  class="inputText" type="text" name="" id="" placeholder="Peso" required> -->
-        <input  class="inputText" type="password" name="" id="password" placeholder="Contraseña" required>
         
-        
-        <input  id="id-btn-registrar-submit" class="botones" type="submit" value="Registrar">
+        <!-- cuatro preguntas -->
+        <div id="contenedor-cuatro-preguntas" class="contenedor-cuatro-preguntas">
+            <input  class="inputText" type="text" name="" id="input_form_pregunta_3" placeholder="¿Pregunta 1?" autocomplete="off" required>
+            <input  class="inputText" type="text" name="" id="input_form_pregunta_4" placeholder="¿pregunta 2?" autocomplete="off" required>
+            <input  class="inputText" type="text" name="" id="input_form_pregunta_5" placeholder="¿Pregunta 3?" autocomplete="off" required>
+            <input  class="inputText" type="text" name="" id="input_form_pregunta_6" placeholder="¿pregunta 4?" autocomplete="off" required>
+        </div>
+        <div id="contenedor-submit" class="contenedor-submit">
+            <input  id="id-btn-registrar-submit" class="botones" type="submit" value="Registrar">
+        </div>        
     </form>
     </div>
-</div>
+</main>
 
 
 

@@ -15,15 +15,15 @@ body {
 .botones {
   margin: 0px auto;
   background: none;
-  border: 1px solid #51D322;
-  color: #51D322;
+  border: 1px solid #0454d4;
+  color: #0454d4;
   padding: 10px;
   cursor: pointer;
   font-size: 16px;
   border-radius: 4px;
 }
 .botones:hover {
-  background: #51D322;
+  background: #0454d4;
   color: #fff;
   transition: all 0.3s linear;
 }
@@ -37,7 +37,7 @@ body {
   font-size: 16px;
 }
 .inputText:hover {
-  border: 1px solid #51D322;
+  border: 1px solid #0454d4;
 }
 
 .contenedor {
@@ -77,7 +77,7 @@ body {
 }
 .contenedor .contenedor-login .contenedor-botones input[type=button] {
   width: 45%;
-  border: 1px solid #51D322;
+  border: 1px solid #0454d4;
 }
 .contenedor .contenedor-login .contenedor-ingresar {
   display: none;
@@ -117,7 +117,7 @@ body {
   margin-top: 15px;
 }
 .contenedor .contenedor-formulario .contenedor-genero:hover {
-  border: 1px solid #51D322;
+  border: 1px solid #0454d4;
 }
 .contenedor .contenedor-formulario .contenedor-fecha-nacimiento {
   width: 100%;
@@ -131,7 +131,7 @@ body {
   justify-content: space-between;
 }
 .contenedor .contenedor-formulario .contenedor-fecha-nacimiento:hover {
-  border: 1px solid #51D322;
+  border: 1px solid #0454d4;
 }
 .contenedor .contenedor-formulario .contenedor-fecha-nacimiento .fecha-texto {
   color: #000;

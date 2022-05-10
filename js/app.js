@@ -91,3 +91,5 @@ function buscarUsuarios(){
     })
     //console.log("entro a la funcion" );
 }
+
+localStorage.setItem(usuarios);

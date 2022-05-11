@@ -12,7 +12,7 @@ const id_btn_ingresar = document.getElementById("id-btn-ingresar");
 
 //Formulario - id_btn_registrar
 const contenedor_dos_preguntas_propias = document.getElementById("contenedor-dos-preguntas-propias");
-const btn_seguira_datos_personales = document.getElementById("btn-seguir-a-datos-personales");
+const btn_seguir_a_preguntas_finales = document.getElementById("btn-seguir-a-preguntas-finales");
 // Formulario Datos personales
 const contenedor_datos_personales = document.getElementById("contenedor-datos-personales");
 const btn_seguir_a_cuantro_preguntas = document.getElementById("btn-seguir-a-cuantro-preguntas");
@@ -23,15 +23,16 @@ const contenedor_cuatro_preguntas = document.getElementById("contenedor-cuatro-p
 const contenedor_submit = document.getElementById("contenedor-submit");
 
 // inputs registro formulario
-const input_form_pregunta_1 = document.getElementById("input_form_pregunta_1");
-const input_form_pregunta_2 = document.getElementById("input_form_pregunta_2");
 const input_form_nombre = document.getElementById("input_form_nombre");
 const input_form_direccion = document.getElementById("input_form_direccion");
+const input_form_genero = document.querySelector('input[name="genero"]:checked');
 const input_form_password = document.getElementById("input_form_password");
+const input_form_pregunta_1 = document.getElementById("input_form_pregunta_1");
+const input_form_pregunta_2 = document.getElementById("input_form_pregunta_2");
 const input_form_pregunta_3 = document.getElementById("input_form_pregunta_3");
 const input_form_pregunta_4 = document.getElementById("input_form_pregunta_4");
-const input_form_pregunta_5 = document.getElementById("input_form_pregunta_5");
-const input_form_pregunta_6 = document.getElementById("input_form_pregunta_6");
+
+
 
 // inputs ingresar
 const input_nombre = document.getElementById("input-nombre");
@@ -45,46 +46,66 @@ const id_btn_registrar_submit = document.getElementById("id-btn-registrar-submit
 const btn_identificar = document.getElementById("btn-identificar");
 const btn_volver = document.getElementById("btn-volver");
 
+const contenedor_usuario_identifiado = document.getElementById("contenedor-usuario-identifiado");
 let nombre_usuario;
 let direccion;
 let genero;
 let fecha_nacimiento;
 let password;
+let pregunta_1;
+let pregunta_2;
+let pregunta_3;
+let pregunta_4;
+
 let usuarios = new Array();
 
 
 /* Inicio <-- Formulario ------------------------------------*/
 // botón registrar de página principal
-id_btn_registrar.addEventListener("click", ()=>{
+//id_btn_registrar.addEventListener("click", mostrar_contenedor_dos_preguntas );
+id_btn_registrar.addEventListener("click", mostrar_datos_Personales );
+function mostrar_datos_Personales(){
+    contenedor_imagen.style.display = "none";
+    contenedor_boton_volver.style.display = "block";
+    contenedor_formulario.style.display = "block";
+
+    contenedor_dos_preguntas_propias.style.display ="none";
+    contenedor_datos_personales.style.display = "block";  
+    contenedor_login_principal.style.display = "none";  
+    contenedor_submit.style.display = "none";
+}
+
+
+//Botón siguiente, va de datos personales a cuatro preguntas finales
+btn_seguir_a_cuantro_preguntas.addEventListener("click", ()=> {
+    contenedor_boton_volver.style.display = "none";
+
+    contenedor_datos_personales.style.display = "none";
+    contenedor_cuatro_preguntas.style.display = "block";
+
+    contenedor_submit.style.display = "none";    
+});
+
+
+
+
+
+
+function mostrar_contenedor_dos_preguntas(){
     contenedor_login_principal.style.display = "none";
     contenedor_formulario.style.display = "block";
-    contenedor_boton_volver.style.display = "block";
+    contenedor_boton_volver.style.display = "none";
     //contenedor_imagen.style.display = "none";
 
     //contenedor_datos_personales.style.display = "none"; // agregado
     contenedor_cuatro_preguntas.style.display = "none";
     contenedor_dos_preguntas_propias.style.display ="block";
-    contenedor_submit.style.display = "none";
-
-})
-
-// Botón siguiente va de 2 preguntas a pedir datos personales
-btn_seguira_datos_personales.addEventListener("click", mostrar_datos_Personales );
-function mostrar_datos_Personales(){
-    contenedor_imagen.style.display = "none";
-    contenedor_boton_volver.style.display = "none";
-
-    contenedor_dos_preguntas_propias.style.display ="none";
-    contenedor_datos_personales.style.display = "block";    
+    contenedor_submit.style.display = "block";
 }
 
-//Botón siguiente, va de datos personales a cuatro preguntas finales
-btn_seguir_a_cuantro_preguntas.addEventListener("click", ()=> {
-    contenedor_datos_personales.style.display = "none";
-    contenedor_cuatro_preguntas.style.display = "block";
-    contenedor_submit.style.display = "block";
-});
-
+// Botón siguiente va de 2 preguntas a pedir datos personales
+//btn_seguir_a_preguntas_finales.addEventListener("click", mostrar_datos_Personales );
+btn_seguir_a_preguntas_finales.addEventListener("click", mostrar_contenedor_dos_preguntas );
 
 
 /*-- Fin  <-- Formulario ------------------------------------*/
@@ -118,6 +139,7 @@ function volver_principal(){
 
     contenedor_botones.style.display = "flex";
     contenedor_ingresar.style.display ="none";
+    contenedor_usuario_identifiado.style.display ="none";
 }
 
 
@@ -125,62 +147,97 @@ function volver_principal(){
 function registrar(){
     nombre_usuario = input_form_nombre.value;
     direccion = input_form_direccion.value;
-    genero;
-    fecha_nacimiento;
+    genero = document.querySelector('input[name="genero"]:checked').value;
+    fecha_nacimiento = document.querySelector('input[type="date"]').value;
     password = input_form_password.value;
+    pregunta_1 = input_form_pregunta_1.value;
+    pregunta_2 = input_form_pregunta_2.value;
+    pregunta_3 = input_form_pregunta_3.value;
+    pregunta_4 = input_form_pregunta_4.value;
+    //console.log("Funcion registro");
+    //console.log(fecha_nacimiento);
     //console.log(nombre_usuario +" "+ direccion +" "+ password);
+    //console.log(pregunta_1+" "+ pregunta_2+" "+pregunta_3+" "+ pregunta_4);
 
-    usuarios.push({nombre_usuario: nombre_usuario, password: password});
+    usuarios.push({nombre_usuario: nombre_usuario, direccion: direccion, genero: genero, fecha_nacimiento: fecha_nacimiento, password: password, pregunta_1: pregunta_1, pregunta_2: pregunta_2, pregunta_3: pregunta_3, pregunta_4, pregunta_4});
     console.log(usuarios);
     limpiar_campos_formulario();
 }
 
 
-
 btn_identificar.addEventListener("click", ()=>{
     //console.log("botn login");
-    buscarUsuarios();
+    buscarUsuarios();    
+});
 
-})
+
 
 
 function buscarUsuarios(){
+    let contenidoHTML ="";
     let usuario_log = document.getElementById("input-nombre").value;
     let clave_log = input_password.value;
-    console.log(usuarios.length);
+    //console.log(usuarios.length);
     if (usuarios.length > 0) {
         usuarios.forEach((usuario)=>{        
             //console.log(usuario.nombre_usuario);    
             if (usuario.nombre_usuario == usuario_log &&  usuario.password == clave_log) {
                 console.log("usuario correcto");
                 limpiar_campos_identificar();
+                contenidoHTML = `
+                <p>Nombre:  ${usuario.nombre_usuario} </p>
+                <p>Dirección: ${usuario.direccion}</p>
+                <p>Genero: ${usuario.genero}</p>
+                <p>Fecha de nacimiento: ${usuario.fecha_nacimiento}</p>
+                <p>Pregunta 1: ${usuario.pregunta_1}</p>
+                <p>Pregunta 2: ${usuario.pregunta_2}</p>
+                <p>Pregunta 3: ${usuario.pregunta_3}</p>
+                <p>Pregunta 4: ${usuario.pregunta_4}</p>
+            `;
+            console.log(usuario.nombre_usuario);
+            contenedor_usuario_identifiado.innerHTML = contenidoHTML;
+            contenedor_ingresar.style.display ="none";
+            contenedor_usuario_identifiado.style.display ="block";
+            input_nombre.style.border="3px solid #fff";
+            input_password.style.border="3px solid #fff";
             }else if (usuario.nombre_usuario != usuario_log) {
                 console.log("usuario no existe");
+                //document.getElementById("input-nombre").style.border="3px solid red";
+                input_nombre.style.border="3px solid red";
+
             }else if (usuario.password != clave_log) {
                 console.log("Contraseña incorrecta");
+                input_nombre.style.border="3px solid #fff";
+                input_password.style.border="3px solid red";
             }
         })        
     }else{
         console.log("no hay usuarios registrados");
+
+
+
     }
     //console.log("entro a la funcion" );
 }
 
 //limpiar campos
 function limpiar_campos_formulario(){
-    input_form_pregunta_2.value = "";
-    input_form_pregunta_1.value = "";
     input_form_nombre.value = ""; 
     input_form_direccion.value = "";    
     input_form_password.value = "";   
+    input_form_pregunta_1.value = "";
+    input_form_pregunta_2.value = "";
     input_form_pregunta_3.value = "";
     input_form_pregunta_4.value = "";
-    input_form_pregunta_5.value = "";
-    input_form_pregunta_6.value = "";
     console.log("campos formulario limpiados");
 }
 
 function limpiar_campos_identificar(){
     input_nombre.value = "";
     input_password.value = "";
+}
+
+
+function validar_campos(){
+
 }

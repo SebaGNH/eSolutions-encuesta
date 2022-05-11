@@ -42,56 +42,71 @@
     <!-- Formulario -->
     <div id="contenedor-formulario"class="contenedor-formulario">
     <form action="" class="formulario">
-        <!-- Dos preguntas propias -->
-        <div id="contenedor-dos-preguntas-propias" class="contenedor-dos-preguntas-propias">
-            <input  class="inputText" type="text" name="" id="input_form_pregunta_1" placeholder="¿Cual es su nombre?" autocomplete="off" required>
-            <input  class="inputText" type="text" name="" id="input_form_pregunta_2" placeholder="¿Cual es su apellido?" autocomplete="off" required>
-            <input id="btn-seguir-a-datos-personales" class="botones btn-seguir-a-datos-personales" type="button" value="Seguir ...">
-        </div>
+        
         <!-- Datos personales -->
         <div id="contenedor-datos-personales" class="contenedor-datos-personales">
             <input  class="inputText" type="text" name="" id="input_form_nombre" placeholder="Nombre" autocomplete="off" required>
-            <input  class="inputText" type="text" name="" id="input_form_direccion" placeholder="Direccion" autocomplete="off" required>
-            <div class="contenedor-genero"> 
-                <div class="genero-texto">
+            <input  class="inputText" type="text" name="" id="input_form_direccion" placeholder="Dirección" autocomplete="off" required>
+            <div class="contenedor-radio"> 
+                <div class="radio-texto">
                     Genero
                 </div>
-                <div class="sexo">
-                    <label for="masculino"><input type="radio" name="genero" value="masculino" id="masculino" >    Masculino</label>
-                    <label for="femenino"><input type="radio" name="genero" value="femenino" id="femenino">    Femenino</label>
-                    <label for="otro"><input type="radio" name="genero" value="otro" id="otro">    Otro</label>
+                <div class="radio-opciones">
+                    <label for="Masculino"><input type="radio" name="genero" value="Masculino" id="masculino" >    Masculino</label>
+                    <label for="Femenino"><input type="radio" name="genero" value="Femenino" id="femenino">    Femenino</label>
+                    <label for="Otro"><input type="radio" name="genero" value="Otro" id="otro" checked>    Otro</label>
                 </div>
             </div>
             <div class="contenedor-fecha-nacimiento">
                 <div class="fecha-texto">
                     Fecha de nacimiento
                 </div>
-                <input type="date" id="start" name="trip-start" value="2022-05-06" min="1900-05-06" max="2022-05-06" required>            
+                <input type="date" id="input-form-fecha" name="fecha" min="1900-05-06" max="2022-05-06">           
             </div>
             <input  class="inputText" type="password" name="" id="input_form_password" placeholder="Contraseña" autocomplete="off" required>
-            <input id="btn-seguir-a-cuantro-preguntas" class="botones btn-seguir-a-cuantro-preguntas" type="button" value="Seguir...">
+            <input id="btn-seguir-a-cuantro-preguntas" class="botones btn-seguir-a-cuantro-preguntas" type="button" value="Siguiente...">
         </div>
         
         <!-- cuatro preguntas -->
         <div id="contenedor-cuatro-preguntas" class="contenedor-cuatro-preguntas">
-            <input  class="inputText" type="text" name="" id="input_form_pregunta_3" placeholder="¿Pregunta 1?" autocomplete="off" required>
-            <input  class="inputText" type="text" name="" id="input_form_pregunta_4" placeholder="¿pregunta 2?" autocomplete="off" required>
-            <input  class="inputText" type="text" name="" id="input_form_pregunta_5" placeholder="¿Pregunta 3?" autocomplete="off" required>
-            <input  class="inputText" type="text" name="" id="input_form_pregunta_6" placeholder="¿pregunta 4?" autocomplete="off" required>
+            <input  class="inputText" type="text" name="" id="input_form_pregunta_1" placeholder="¿Pregunta 1?" autocomplete="off" required>
+            <input  class="inputText" type="text" name="" id="input_form_pregunta_2" placeholder="¿pregunta 2?" autocomplete="off" required>
+            <input  class="inputText" type="text" name="" id="input_form_pregunta_3" placeholder="¿Pregunta 3?" autocomplete="off" required>
+            <input  class="inputText" type="text" name="" id="input_form_pregunta_4" placeholder="¿pregunta 4?" autocomplete="off" required>
+            <input id="btn-seguir-a-preguntas-finales" class="botones btn-seguir-a-preguntas-finales" type="button" value="Siguiente ...">
+        </div>
+        <!-- Dos preguntas propias -->
+        <div id="contenedor-dos-preguntas-propias" class="contenedor-dos-preguntas-propias">
+            <div class="contenedor-radio">
+                <div class="radio-texto">
+                    ¿Le pareció muy extensa nuestra encuesta?
+                </div>
+                <div class="radio-opciones">
+                    <label for="encuesta-extensa"><input type="radio" name="encuesta-extensa" value="" id="" >    Si</label>
+                    <label for="encuesta-extensa"><input type="radio" name="encuesta-extensa" value="" id="" checked>    No</label>
+                </div>
+            </div>
+            <div class="contenedor-radio">
+                <div class="radio-texto">
+                    ¿Nos permite que publiquemos los datos recopilados de manera anonima?
+                </div>
+                <div class="radio-opciones">
+                    <label for="recopilacion-anonima"><input type="radio" name="recopilacion-anonima" value="" id="" checked>    Si</label>
+                    <label for="recopilacion-anonima"><input type="radio" name="recopilacion-anonima" value="" id="">    No</label>
+                </div>
+            </div>
+            
         </div>
         <div id="contenedor-submit" class="contenedor-submit">
             <input  id="id-btn-registrar-submit" class="botones" type="submit" value="Registrar">
         </div>        
     </form>
     </div>
-    
+    <div id="contenedor-usuario-identifiado" class="contenedor-usuario-identifiado">
+        
+    </div>
+
 </main>
-
-
-
-
-
-
 
 
 

@@ -88,7 +88,6 @@ btn_seguir_a_cuantro_preguntas.addEventListener("click", ()=> {
 
 btn_seguir_a_preguntas_finales.addEventListener("click", mostrar_contenedor_dos_preguntas );
 function mostrar_contenedor_dos_preguntas(){
-    console.log("en 4 preguntas");
     if (validar_cuatro_preguntas()) {
         contenedor_login_principal.style.display = "none";
         contenedor_formulario.style.display = "block";
@@ -143,7 +142,6 @@ function registrar(){
     pregunta_4 = input_form_pregunta_4.value;
 
     usuarios.push({nombre_usuario: nombre_usuario, direccion: direccion, genero: genero, fecha_nacimiento: fecha_nacimiento, password: password, pregunta_1: pregunta_1, pregunta_2: pregunta_2, pregunta_3: pregunta_3, pregunta_4, pregunta_4});
-    console.log(usuarios);
     limpiar_campos_formulario();
 }
 
@@ -158,12 +156,9 @@ function buscarUsuarios(){
     let contenidoHTML ="";
     let usuario_log = document.getElementById("input-nombre").value;
     let clave_log = input_password.value;
-    //console.log(usuarios.length);
     if (usuarios.length > 0) {
-        usuarios.forEach((usuario)=>{        
-            //console.log(usuario.nombre_usuario);    
+        usuarios.forEach((usuario)=>{    
             if (usuario.nombre_usuario == usuario_log &&  usuario.password == clave_log) {
-                console.log("usuario correcto");
                 limpiar_campos_identificar();
                 contenidoHTML = `
                 <p>Nombre:  ${usuario.nombre_usuario} </p>
@@ -175,23 +170,21 @@ function buscarUsuarios(){
                 <p>Respuesta 3: ${usuario.pregunta_3}</p>
                 <p>Respuesta 4: ${usuario.pregunta_4}</p>
             `;
-            //console.log(usuario.nombre_usuario);
 
             contenedor_imagen.style.display = "none";
             contenedor_usuario_identifiado.innerHTML = contenidoHTML;
             contenedor_ingresar.style.display ="none";
             contenedor_usuario_identifiado.style.display ="block";
             }else if (usuario.nombre_usuario != usuario_log) {
-                console.log("usuario no existe");
                 input_nombre.style.border="3px solid red";
+                span_usuario_invalido.style.visibility = "visible";
 
             }else if (usuario.password != clave_log) {
-                console.log("Contraseña incorrecta");
                 input_password.style.border="3px solid red";
+                span_clave_invalida.style.visibility = "visible";
             }
         })        
     }else{
-        console.log("no hay usuarios registrados");
         input_nombre.style.border="3px solid red";
         input_password.style.border="3px solid red";
         span_usuario_inexistente.style.visibility = "visible";
@@ -208,7 +201,6 @@ function limpiar_campos_formulario(){
     input_form_pregunta_2.value = "";
     input_form_pregunta_3.value = "";
     input_form_pregunta_4.value = "";
-    console.log("campos formulario limpiados");
 }
 
 function limpiar_campos_identificar(){

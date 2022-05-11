@@ -32,8 +32,17 @@
         </div>
         <!-- Boton ingresar -->
         <div id="contenedor-ingresar" class="contenedor-ingresar">
-            <input class="inputText" type="text" name="" id="input-nombre" placeholder="Nombre" autocomplete="off" required>
-            <input class="inputText" type="password" name="" id="input-password" placeholder="Contraseña" autocomplete="off" required>
+            <label class="label-usuarios-no-registrados">
+                <br>
+            </label>
+            <label class="label-preguntas">Nombre 
+                <span id="span-usuario-invalido"class="span-invalido">invalido</span>
+                <span id="span-usuario-inexistente" class="span-invalido">   No hay usuarios registrados</span>
+                <input class="inputText" type="text" name="" id="input-nombre" placeholder="Nombre" autocomplete="off" required>
+            </label>
+            <label class="label-preguntas"> Contraseña <span id="span-clave-invalida"class="span-invalido">invalida</span>
+                <input class="inputText" type="password" name="" id="input-password" placeholder="Contraseña" autocomplete="off" required>
+            </label>
             <input id="btn-identificar" class="botones btn-identificar" type="button" value="Identificar">
         </div>
     </div>
@@ -45,8 +54,12 @@
         
         <!-- Datos personales -->
         <div id="contenedor-datos-personales" class="contenedor-datos-personales">
-            <input  class="inputText" type="text" name="" id="input_form_nombre" placeholder="Nombre" autocomplete="off" required>
-            <input  class="inputText" type="text" name="" id="input_form_direccion" placeholder="Dirección" autocomplete="off" required>
+            <label class="label-preguntas">Nombre
+                <input  class="inputText" type="text" name="" id="input_form_nombre" placeholder="Nombre" autocomplete="off" required>
+            </label>
+            <label class="label-preguntas">Dirección
+                <input  class="inputText" type="text" name="" id="input_form_direccion" placeholder="Dirección" autocomplete="off" required>
+            </label>
             <div class="contenedor-radio"> 
                 <div class="radio-texto">
                     Genero
@@ -63,16 +76,26 @@
                 </div>
                 <input type="date" id="input-form-fecha" name="fecha" min="1900-05-06" max="2022-05-06">           
             </div>
-            <input  class="inputText" type="password" name="" id="input_form_password" placeholder="Contraseña" autocomplete="off" required>
+            <label class="label-preguntas">Contraseña
+                <input  class="inputText" type="password" name="" id="input_form_password" placeholder="Contraseña" autocomplete="off" required>
+            </label>
             <input id="btn-seguir-a-cuantro-preguntas" class="botones btn-seguir-a-cuantro-preguntas" type="button" value="Siguiente...">
         </div>
         
         <!-- cuatro preguntas -->
         <div id="contenedor-cuatro-preguntas" class="contenedor-cuatro-preguntas">
-            <input  class="inputText" type="text" name="" id="input_form_pregunta_1" placeholder="¿Pregunta 1?" autocomplete="off" required>
-            <input  class="inputText" type="text" name="" id="input_form_pregunta_2" placeholder="¿pregunta 2?" autocomplete="off" required>
-            <input  class="inputText" type="text" name="" id="input_form_pregunta_3" placeholder="¿Pregunta 3?" autocomplete="off" required>
-            <input  class="inputText" type="text" name="" id="input_form_pregunta_4" placeholder="¿pregunta 4?" autocomplete="off" required>
+            <label class="label-preguntas">¿Dónde está Transilvania?
+                <input  class="inputText" type="text" name="" id="input_form_pregunta_1" placeholder="Respuesta 1" autocomplete="off" required>
+            </label>
+            <label f class="label-preguntas">¿Cuándo y donde se inventó la imprenta?
+                <input  class="inputText" type="text" name="" id="input_form_pregunta_2" placeholder="Respuesta 2" autocomplete="off" required>
+            </label>
+            <label f class="label-preguntas">¿Cuál es la videoconsola más vendida de la historia?
+                <input  class="inputText" type="text" name="" id="input_form_pregunta_3" placeholder="Respuesta 3" autocomplete="off" required>
+            </label>
+            <label f class="label-preguntas">¿Cuál es el planeta más alejado del Sol?
+                <input  class="inputText" type="text" name="" id="input_form_pregunta_4" placeholder="Respuesta 4" autocomplete="off" required>
+            </label>
             <input id="btn-seguir-a-preguntas-finales" class="botones btn-seguir-a-preguntas-finales" type="button" value="Siguiente ...">
         </div>
         <!-- Dos preguntas propias -->

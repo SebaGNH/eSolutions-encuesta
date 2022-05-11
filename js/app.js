@@ -26,6 +26,7 @@ const contenedor_submit = document.getElementById("contenedor-submit");
 const input_form_nombre = document.getElementById("input_form_nombre");
 const input_form_direccion = document.getElementById("input_form_direccion");
 const input_form_genero = document.querySelector('input[name="genero"]:checked');
+const input_form_fecha = document.querySelector('input[type="date"]');
 const input_form_password = document.getElementById("input_form_password");
 const input_form_pregunta_1 = document.getElementById("input_form_pregunta_1");
 const input_form_pregunta_2 = document.getElementById("input_form_pregunta_2");
@@ -37,7 +38,9 @@ const input_form_pregunta_4 = document.getElementById("input_form_pregunta_4");
 // inputs ingresar
 const input_nombre = document.getElementById("input-nombre");
 const input_password = document.getElementById("input-password");
-
+const span_usuario_inexistente = document.getElementById("span-usuario-inexistente");
+const span_usuario_invalido = document.getElementById("span-usuario-invalido");
+const span_clave_invalida = document.getElementById("span-clave-invalida");
 // Botón ingresar
 const contenedor_botones = document.getElementById("contenedor-botones");
 const contenedor_ingresar = document.getElementById("contenedor-ingresar");
@@ -59,10 +62,7 @@ let pregunta_4;
 
 let usuarios = new Array();
 
-
 /* Inicio <-- Formulario ------------------------------------*/
-// botón registrar de página principal
-//id_btn_registrar.addEventListener("click", mostrar_contenedor_dos_preguntas );
 id_btn_registrar.addEventListener("click", mostrar_datos_Personales );
 function mostrar_datos_Personales(){
     contenedor_imagen.style.display = "none";
@@ -75,39 +75,29 @@ function mostrar_datos_Personales(){
     contenedor_submit.style.display = "none";
 }
 
-
-//Botón siguiente, va de datos personales a cuatro preguntas finales
 btn_seguir_a_cuantro_preguntas.addEventListener("click", ()=> {
-    contenedor_boton_volver.style.display = "none";
+    if (validar_formulario_datos_personales()) {
+        contenedor_boton_volver.style.display = "none";
 
-    contenedor_datos_personales.style.display = "none";
-    contenedor_cuatro_preguntas.style.display = "block";
-
-    contenedor_submit.style.display = "none";    
+        contenedor_datos_personales.style.display = "none";
+        contenedor_cuatro_preguntas.style.display = "block";
+    
+        contenedor_submit.style.display = "none";          
+    }
 });
 
-
-
-
-
-
-function mostrar_contenedor_dos_preguntas(){
-    contenedor_login_principal.style.display = "none";
-    contenedor_formulario.style.display = "block";
-    contenedor_boton_volver.style.display = "none";
-    //contenedor_imagen.style.display = "none";
-
-    //contenedor_datos_personales.style.display = "none"; // agregado
-    contenedor_cuatro_preguntas.style.display = "none";
-    contenedor_dos_preguntas_propias.style.display ="block";
-    contenedor_submit.style.display = "block";
-}
-
-// Botón siguiente va de 2 preguntas a pedir datos personales
-//btn_seguir_a_preguntas_finales.addEventListener("click", mostrar_datos_Personales );
 btn_seguir_a_preguntas_finales.addEventListener("click", mostrar_contenedor_dos_preguntas );
-
-
+function mostrar_contenedor_dos_preguntas(){
+    console.log("en 4 preguntas");
+    if (validar_cuatro_preguntas()) {
+        contenedor_login_principal.style.display = "none";
+        contenedor_formulario.style.display = "block";
+        contenedor_boton_volver.style.display = "none";
+        contenedor_cuatro_preguntas.style.display = "none";
+        contenedor_dos_preguntas_propias.style.display ="block";
+        contenedor_submit.style.display = "block";
+    }
+}
 /*-- Fin  <-- Formulario ------------------------------------*/
 
 /* Inicio <-- Identificar ------------------------------------*/  
@@ -129,7 +119,6 @@ id_btn_registrar_submit.addEventListener("click", (e)=>{
 });
 
 
-
 btn_volver.addEventListener("click", volver_principal);
 function volver_principal(){
     contenedor_login_principal.style.display = "block";
@@ -142,22 +131,16 @@ function volver_principal(){
     contenedor_usuario_identifiado.style.display ="none";
 }
 
-
-
 function registrar(){
     nombre_usuario = input_form_nombre.value;
     direccion = input_form_direccion.value;
     genero = document.querySelector('input[name="genero"]:checked').value;
-    fecha_nacimiento = document.querySelector('input[type="date"]').value;
+    fecha_nacimiento = input_form_fecha.value;
     password = input_form_password.value;
     pregunta_1 = input_form_pregunta_1.value;
     pregunta_2 = input_form_pregunta_2.value;
     pregunta_3 = input_form_pregunta_3.value;
     pregunta_4 = input_form_pregunta_4.value;
-    //console.log("Funcion registro");
-    //console.log(fecha_nacimiento);
-    //console.log(nombre_usuario +" "+ direccion +" "+ password);
-    //console.log(pregunta_1+" "+ pregunta_2+" "+pregunta_3+" "+ pregunta_4);
 
     usuarios.push({nombre_usuario: nombre_usuario, direccion: direccion, genero: genero, fecha_nacimiento: fecha_nacimiento, password: password, pregunta_1: pregunta_1, pregunta_2: pregunta_2, pregunta_3: pregunta_3, pregunta_4, pregunta_4});
     console.log(usuarios);
@@ -166,13 +149,11 @@ function registrar(){
 
 
 btn_identificar.addEventListener("click", ()=>{
-    //console.log("botn login");
-    buscarUsuarios();    
+    if (validar_identificar()) {
+        buscarUsuarios();
+    }
+    
 });
-
-
-
-
 function buscarUsuarios(){
     let contenidoHTML ="";
     let usuario_log = document.getElementById("input-nombre").value;
@@ -189,41 +170,39 @@ function buscarUsuarios(){
                 <p>Dirección: ${usuario.direccion}</p>
                 <p>Genero: ${usuario.genero}</p>
                 <p>Fecha de nacimiento: ${usuario.fecha_nacimiento}</p>
-                <p>Pregunta 1: ${usuario.pregunta_1}</p>
-                <p>Pregunta 2: ${usuario.pregunta_2}</p>
-                <p>Pregunta 3: ${usuario.pregunta_3}</p>
-                <p>Pregunta 4: ${usuario.pregunta_4}</p>
+                <p>Respuesta 1: ${usuario.pregunta_1}</p>
+                <p>Respuesta 2: ${usuario.pregunta_2}</p>
+                <p>Respuesta 3: ${usuario.pregunta_3}</p>
+                <p>Respuesta 4: ${usuario.pregunta_4}</p>
             `;
-            console.log(usuario.nombre_usuario);
+            //console.log(usuario.nombre_usuario);
+
+            contenedor_imagen.style.display = "none";
             contenedor_usuario_identifiado.innerHTML = contenidoHTML;
             contenedor_ingresar.style.display ="none";
             contenedor_usuario_identifiado.style.display ="block";
-            input_nombre.style.border="3px solid #fff";
-            input_password.style.border="3px solid #fff";
             }else if (usuario.nombre_usuario != usuario_log) {
                 console.log("usuario no existe");
-                //document.getElementById("input-nombre").style.border="3px solid red";
                 input_nombre.style.border="3px solid red";
 
             }else if (usuario.password != clave_log) {
                 console.log("Contraseña incorrecta");
-                input_nombre.style.border="3px solid #fff";
                 input_password.style.border="3px solid red";
             }
         })        
     }else{
         console.log("no hay usuarios registrados");
-
-
-
+        input_nombre.style.border="3px solid red";
+        input_password.style.border="3px solid red";
+        span_usuario_inexistente.style.visibility = "visible";
     }
-    //console.log("entro a la funcion" );
 }
 
 //limpiar campos
 function limpiar_campos_formulario(){
     input_form_nombre.value = ""; 
-    input_form_direccion.value = "";    
+    input_form_direccion.value = ""; 
+    input_form_fecha.value = "";   
     input_form_password.value = "";   
     input_form_pregunta_1.value = "";
     input_form_pregunta_2.value = "";
@@ -238,6 +217,91 @@ function limpiar_campos_identificar(){
 }
 
 
-function validar_campos(){
-
+// validar campos
+function blanquear_bordes(){ 
+    input_form_nombre.style.border="3px solid #fff";
+    input_form_direccion.style.border="3px solid #fff"; 
+    input_form_genero.style.border="3px solid #fff"; 
+    input_form_fecha.style.border="3px solid #fff"; 
+    input_form_password.style.border="3px solid #fff"; 
+    input_form_pregunta_1.style.border="3px solid #fff"; 
+    input_form_pregunta_2.style.border="3px solid #fff"; 
+    input_form_pregunta_3.style.border="3px solid #fff"; 
+    input_form_pregunta_4.style.border="3px solid #fff"; 
+    input_nombre.style.border="3px solid #fff";
+    input_password.style.border="3px solid #fff";
+    span_usuario_invalido.style.visibility = "hidden";
+    span_clave_invalida.style.visibility = "hidden";
+    span_usuario_inexistente.style.visibility = "hidden";
 }
+
+function validar_formulario_datos_personales(){ //linea 82
+    blanquear_bordes();
+    if (input_form_nombre.value == "") {
+        input_form_nombre.style.border="3px solid red";
+        input_form_nombre.focus();
+        return false;
+    } 
+    if (input_form_direccion.value == "") {
+        input_form_direccion.style.border="3px solid red";
+        input_form_direccion.focus();
+        return false;
+    }
+    if (input_form_fecha.value == "") {
+        input_form_fecha.style.border="3px solid red";
+        input_form_fecha.focus();
+        return false;
+    }
+    if (input_form_password.value == "") {
+        input_form_password.style.border="3px solid red";
+        input_form_password.focus();
+        return false;
+    }
+    return true;
+}
+
+
+function validar_cuatro_preguntas(){
+    blanquear_bordes();
+    if (input_form_pregunta_1.value == "") {
+        input_form_pregunta_1.style.border="3px solid red";
+        input_form_pregunta_1.focus();
+        return false;
+    } 
+    if (input_form_pregunta_2.value == "") {
+        input_form_pregunta_2.style.border="3px solid red";
+        input_form_pregunta_2.focus();
+        return false;
+    }
+    if (input_form_pregunta_3.value == "") {
+        input_form_pregunta_3.style.border="3px solid red";
+        input_form_pregunta_3.focus();
+        return false;
+    }
+    if (input_form_pregunta_4.value == "") {
+        input_form_pregunta_4.style.border="3px solid red";
+        input_form_pregunta_4.focus();
+        return false;
+    }
+    return true;
+}
+
+function validar_identificar(){
+    blanquear_bordes();
+    if (input_nombre.value == "") {
+        input_nombre.style.border="3px solid red";
+        input_nombre.focus();
+        span_usuario_invalido.style.visibility = "visible";
+        return false;
+    } 
+    if (input_password.value == "") {
+        input_password.style.border="3px solid red";
+        input_password.focus();
+        //document.getElementById("span-clave-incorrecta").style.visibility = "visible";
+        span_clave_invalida.style.visibility = "visible";
+        return false;
+    }
+    return true;
+}
+
+

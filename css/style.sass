@@ -11,6 +11,7 @@ body
     background-attachment: fixed
 
 // Clases globales
+//Botones globales
 .botones
     margin: 0px auto
     background-color: rgba(#fff,.7)
@@ -24,7 +25,7 @@ body
         background: #0454d4
         color: #fff
         transition: all .3s linear
-
+//input text gobales
 .inputText
     border: 2px solid #fff
     width: 100%
@@ -35,6 +36,18 @@ body
     &:hover
         border: 2px solid #0454d4
 
+//label globales
+.label-preguntas
+    margin-bottom: 10px
+    font-size: 18px
+    input
+        margin-top: 5px
+
+
+.span-invalido
+    visibility: hidden 
+    color: red
+//radio button globales
 .contenedor-radio
     width: 100%
     padding: 20px 
@@ -59,10 +72,8 @@ body
 
 
 
-
 // Clases Contenedor principal
 .contenedor
-    //background: #fff
     background-color: rgba(#fff,.6)
     max-width: 500px
     width: 90%
@@ -89,7 +100,6 @@ body
         .botonVolver
             width: 100%
             border: 1px solid #000
-            //background: #000 
             color: #000
             margin: 15px 0
             &:hover
@@ -106,19 +116,16 @@ body
                 width: 45%
                 border: 1px solid #0454d4
         .contenedor-ingresar
-            display: none
+            display: none            
             .btn-identificar
                 width: 100%
 
     // Contenedor Formulario
     .contenedor-formulario
-        //opacity: 0.4
         display: none
         .formulario
             display: none
-            //background: #fff
             background: none
-            //background-color: rgba(#fff,.6)
             display: flex
             flex-direction: column
             .contenedor-datos-personales
@@ -150,6 +157,7 @@ body
                     width: 100%
             .contenedor-cuatro-preguntas
                 display: none
+                
                 .btn-seguir-a-preguntas-finales
                     width: 100%                
         .contenedor-submit  
@@ -158,8 +166,7 @@ body
                 width: 100%
 
 .contenedor-usuario-identifiado
+    margin-left: 30px
     p
         font-size: 20px
-
-
-
+        margin: 20px 0
